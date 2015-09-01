@@ -23,21 +23,22 @@ var right2 = document.getElementById("next2");
 
 left.onclick = function(){
 	if (imgCounter == 0){
-		imgCounter = 12;
+		imgCounter = 11;
 	}
 	imgCounter--;
 	img = "img/"+rowCounter+"_"+imgCounter+".jpg";
 	document.getElementById("thisImage").src = img;
-}
+	console.log(imgCounter);
+};
 
 right.onclick = function(){
-if (imgCounter == 12){
+if (imgCounter == 11){
 		imgCounter = -1;
 	}
 	imgCounter++;
 	img = "img/"+rowCounter+"_"+imgCounter+".jpg";
 	document.getElementById("thisImage").src = img;
-
-}
+	console.log(imgCounter);
+};
 
 });
