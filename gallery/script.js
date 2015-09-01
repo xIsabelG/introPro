@@ -2,21 +2,35 @@ window.addEventListener("load",function(){
 
 var imgCounter = 0;
 var rowCounter = 0;
-var source = getElementById("#thisImage");
 
-var img = "img/"+imgCounter+"_"+rowCounter+"";
+var imgCounter1 = 0;
+var rowCounter1 = 0;
 
-var left = getElementById("#pervious");
-var right = getElementById("#next");
+var imgCounter2 = 0;
+var rowCounter2 = 0;
 
-left.onclick(function(){
+var img = "img/"+imgCounter+"_"+rowCounter+".jpg";
+var source = document.getElementById("#thisImage");
+
+var source1 = document.getElementById("#thisImage1");
+var source2 = document.getElementById("#thisImage2");
+
+var left = document.getElementById("#previous");
+var right = document.getElementById("#next");
+
+var left1 = document.getElementById("#previous1");
+var right1 = document.getElementById("#next1");
+
+var left2 = document.getElementById("#previous2");
+var right2 = document.getElementById("#next2");
+
+left.onclick = function(){
 	if (imgCounter < 0){
-		imgCounter == 0;
+		imgCounter = 12;
 	}
 	imgCounter--;
-	source = img;
+	source.src = img;
 
-
-})
+}
 
 });
