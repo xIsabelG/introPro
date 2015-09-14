@@ -22,31 +22,34 @@ var right1 = document.getElementById("next1");
 var left2 = document.getElementById("previous2");
 var right2 = document.getElementById("next2");
 
-left.onclick = function(){
-	rowCounter = 0;
-		if (imgCounter == 1){
-			imgCounter = MAGIC_NUMBER;
-		}
-	imgCounter--;
-	img = "img/zero/"+rowCounter+"_"+imgCounter+".jpg";
-	document.getElementById("thisImage").src = img;
+    function clickLeft(){
+            rowCounter = 0;
+            if (imgCounter == 1) {
+                imgCounter = MAGIC_NUMBER;
+            }
+            imgCounter--;
+            img = "img/zero/" + rowCounter + "_" + imgCounter + ".jpg";
+            source.src = img;
 
-	document.getElementById('image').innerHTML = imgCounter;
-	console.log(imgCounter);
-}
+            document.getElementById('image').innerHTML = imgCounter;
+            console.log(imgCounter);
+    }
 
-right.onclick = function(){
-	rowCounter = 0;
-		if (imgCounter == 12){
-				imgCounter = MAGIC_NUMBER1;
-			}
-	imgCounter++;
-	img = "img/zero/"+rowCounter+"_"+imgCounter+".jpg";
-	document.getElementById("thisImage").src = img;
+    function clickRight(){
+        rowCounter = 0;
+        if (imgCounter == 12){
+            imgCounter = MAGIC_NUMBER1;
+        }
+        imgCounter++;
+        img = "img/zero/"+rowCounter+"_"+imgCounter+".jpg";
+        source.src = img;
 
-	document.getElementById('image').innerHTML = imgCounter;
-	
-}
+        document.getElementById('image').innerHTML = imgCounter;
+    }
+
+
+left.addEventListener("click", clickLeft);
+right.addEventListener("click", clickRight);
 
 left1.onclick = function(){
 	rowCounter = 1;
@@ -55,11 +58,11 @@ left1.onclick = function(){
 		}
 	imgCounter1--;
 	img = "img/one/"+rowCounter+"_"+imgCounter1+".jpg";
-	document.getElementById("thisImage1").src = img;
+	source1.src = img;
 	
 	document.getElementById('image1').innerHTML = imgCounter1;
 	document.getElementById('imageRow1').innerHTML = rowCounter;
-}
+};
 
 right1.onclick = function(){
 	rowCounter = 1;
@@ -68,10 +71,10 @@ right1.onclick = function(){
 		}
 	imgCounter1++;
 	img = "img/one/"+rowCounter+"_"+imgCounter1+".jpg";
-	document.getElementById("thisImage1").src = img;
+	source1.src = img;
 	
 	document.getElementById('image1').innerHTML = imgCounter1;
-}
+};
 
 left2.onclick = function(){
 	rowCounter = 2;
@@ -80,11 +83,11 @@ left2.onclick = function(){
 		}
 	imgCounter2--;
 	img = "img/two/"+rowCounter+"_"+imgCounter2+".jpg";
-	document.getElementById("thisImage2").src = img;
+	source2.src = img;
 
 	document.getElementById('image2').innerHTML = imgCounter2;
 
-}
+};
 
 right2.onclick = function(){
 	rowCounter = 2;
@@ -93,7 +96,7 @@ right2.onclick = function(){
 		}
 	imgCounter2++;
 	img = "img/two/"+rowCounter+"_"+imgCounter2+".jpg";
-	document.getElementById("thisImage2").src = img;
+	source2.src = img;
 	
 	document.getElementById('image2').innerHTML = imgCounter2;
 }
